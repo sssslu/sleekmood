@@ -17,10 +17,10 @@ export default function Collection() {
         {/* Open Graph for social media previews */}
         <meta property="og:title" content="Sleekmood - 2026 Special Collection" />
         <meta property="og:description" content="Soft Classic & Romantic Mood" />
-        <meta property="og:image" content="https://sleekmood.com/images/banner.png" />
+        <meta property="og:image" content="https://sleekmoodkr.com/images/banner.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="https://sleekmood.com/collection" />
+        <meta property="og:url" content="https://sleekmoodkr.com/collection" />
         <meta property="og:type" content="website" />
       </Head>
       <Header />

@@ -26,10 +26,10 @@ export default function SleekmoodPage() {
         {/* Open Graph for social media previews */}
         <meta property="og:title" content="Sleekmood Collection" />
         <meta property="og:description" content="Artistic Inspiration & Mood" />
-        <meta property="og:image" content="https://sleekmood.com/images/banner.png" />
+        <meta property="og:image" content="https://sleekmoodkr.com/images/banner.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="https://sleekmood.com/sleekmood" />
+        <meta property="og:url" content="https://sleekmoodkr.com/sleekmood" />
         <meta property="og:type" content="website" />
       </Head>
       <Header />
