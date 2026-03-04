@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './ProductGrid.module.css';
 import { useLang } from '../pages/_app';
@@ -7,6 +10,8 @@ export default function ProductGrid() {
   const products = t('products') || [];
   const title = t('productSectionTitle');
   const learnMore = t('learnMore');
+  const [displayCount, setDisplayCount] = useState(12);
+  
   // Mapping of images corresponding to the products. If more products
   // are added, extend this array accordingly. The images live in
   // public/images and will be served statically by Next.js.
@@ -20,15 +25,22 @@ export default function ProductGrid() {
     '/images/product7.png',
   ];
 
+  const displayedProducts = products.slice(0, displayCount);
+  const hasMoreProducts = displayCount < products.length;
+
+  const handleLoadMore = () => {
+    setDisplayCount(prev => prev + 12);
+  };
+
   return (
     <section id="shop" className={styles.section}>
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.grid}>
-        {products.map((product, idx) => (
+        {displayedProducts.map((product, idx) => (
           <div key={idx} className={styles.item}>
             <div className={styles.imageWrapper}>
               <Image
-                src={images[idx % images.length]}
+                src={product.imageUrl || images[idx % images.length]}
                 alt={product.name}
                 fill
                 style={{ objectFit: 'cover' }}
@@ -41,7 +53,9 @@ export default function ProductGrid() {
           </div>
         ))}
       </div>
-      <a href="#" className={styles.learnMore}>{learnMore}</a>
+      {hasMoreProducts && (
+        <button onClick={handleLoadMore} className={styles.learnMore}>{learnMore}</button>
+      )}
     </section>
   );
 }
