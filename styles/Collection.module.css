@@ -1,0 +1,82 @@
+.main {
+  padding-top: 100px;
+  min-height: 100vh;
+  background-color: #f9f7f3;
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.subtitle {
+  font-family: 'Poppins', sans-serif;
+  color: #666;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.heroImage {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.heroText {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.heroText h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3a2f24;
+}
+
+.heroText p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.gridItem {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
