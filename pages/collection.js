@@ -11,6 +11,15 @@ export default function Collection() {
     <>
       <Head>
         <title>Sleekmood - Collection</title>
+        <meta name="description" content="Sleekmood 2026 SS Collection - Soft Classic & Romantic Mood" />
+        <link rel="icon" href="/fav.png" type="image/png" />
+        
+        {/* Open Graph for social media previews */}
+        <meta property="og:title" content="Sleekmood - 2026 SS Collection" />
+        <meta property="og:description" content="Soft Classic & Romantic Mood" />
+        <meta property="og:image" content="/banner.png" />
+        <meta property="og:url" content="https://sleekmood.com/collection" />
+        <meta property="og:type" content="website" />
       </Head>
       <Header />
       <main className={styles.main}>

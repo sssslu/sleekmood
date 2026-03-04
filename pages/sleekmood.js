@@ -21,6 +21,14 @@ export default function SleekmoodPage() {
       <Head>
         <title>Sleekmood - {t('nav.with')}</title>
         <meta name="description" content="Sleekmood Art & Inspiration" />
+        <link rel="icon" href="/fav.png" type="image/png" />
+        
+        {/* Open Graph for social media previews */}
+        <meta property="og:title" content="Sleekmood Collection" />
+        <meta property="og:description" content="Artistic Inspiration & Mood" />
+        <meta property="og:image" content="/banner.png" />
+        <meta property="og:url" content="https://sleekmood.com/sleekmood" />
+        <meta property="og:type" content="website" />
       </Head>
       <Header />
       <main className={styles.main}>
