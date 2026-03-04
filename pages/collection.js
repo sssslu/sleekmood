@@ -25,7 +25,7 @@ export default function Collection() {
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <h1 className={styles.title}>2026 SS Collection</h1>
+            <h1 className={styles.title}>2026 Special Collection</h1>
             <p className={styles.subtitle}>Soft Classic & Romantic Mood</p>
           </div>
           

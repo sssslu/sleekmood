@@ -33,9 +33,6 @@ export default function SleekmoodPage() {
       <Header />
       <main className={styles.main}>
         <div className={styles.container}>
-          <h1 className={styles.title}>{t('nav.with')}</h1>
-          <p className={styles.subtitle}>Artistic Inspiration & Mood</p>
-          
           <div className={styles.grid}>
             {images.map((src, idx) => (
               <div key={idx} className={styles.card}>
