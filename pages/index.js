@@ -17,7 +17,9 @@ export default function Home() {
         {/* Open Graph for social media previews */}
         <meta property="og:title" content="Sleekmood – Soft Classic Collection" />
         <meta property="og:description" content="Discover Sleekmood's latest Soft Classic collection. Elegant silhouettes, soft fabrics and timeless designs." />
-        <meta property="og:image" content="/banner.png" />
+        <meta property="og:image" content="https://sleekmood.com/images/banner.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://sleekmood.com" />
         <meta property="og:type" content="website" />
         
