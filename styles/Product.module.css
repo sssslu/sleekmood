@@ -1,0 +1,226 @@
+/* ─────────────────────────────────────────
+   Product Detail Page
+   ───────────────────────────────────────── */
+
+.main {
+  background-color: #f9f7f3;
+  min-height: 100vh;
+  padding: 2rem 1.5rem 5rem;
+}
+
+/* 뒤로가기 버튼 */
+.backButton {
+  display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #876c57;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.05em;
+  padding: 0;
+  margin-bottom: 2rem;
+  transition: opacity 0.2s;
+}
+.backButton:hover {
+  opacity: 0.7;
+}
+
+/* ─── 2-column layout ─── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ─── Left: image area ─── */
+.imageSection {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ede9e2;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Right: info area ─── */
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.productName {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c2118;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #876c57;
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e4ddd4;
+  margin: 0.25rem 0;
+}
+
+/* ─── Perks list (shipping / returns / guarantee) ─── */
+.perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.perkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: #7a6350;
+  font-family: 'Poppins', sans-serif;
+}
+.perkIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ─── Buy button ─── */
+.buyButton {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #3a2f24;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.buyButton:hover {
+  background-color: #5a4535;
+  transform: translateY(-1px);
+}
+.buyButton:active {
+  transform: translateY(0);
+}
+
+/* ─── Modal overlay ─── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modalIcon {
+  font-size: 2.2rem;
+}
+
+.modalTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c2118;
+  margin: 0;
+}
+
+.modalDesc {
+  font-size: 0.88rem;
+  color: #7a6350;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.modalSignupButton {
+  padding: 0.8rem 1.5rem;
+  background-color: #3a2f24;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.modalSignupButton:hover {
+  background-color: #5a4535;
+}
+
+.modalCloseButton {
+  padding: 0.65rem 1.5rem;
+  background: none;
+  border: 1px solid #cfc6bc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #7a6350;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.modalCloseButton:hover {
+  border-color: #876c57;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .imageSection {
+    aspect-ratio: 4 / 5;
+  }
+
+  .productName {
+    font-size: 1.6rem;
+  }
+}

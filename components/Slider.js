@@ -4,12 +4,19 @@ import { useRouter } from 'next/router';
 import styles from './Slider.module.css';
 import { useLang } from '../pages/_app';
 
+// 각 슬라이드를 구성하는 좌우 패널 이미지.
+// 이미지를 교체할 때는 src/alt만 수정하세요.
+const PANEL_IMAGES = [
+  { src: '/images/hero.png', alt: 'Main visual' },
+  { src: '/images/rose.png', alt: 'Rose visual' },
+];
+
 export default function Slider() {
   const { t } = useLang();
   const router = useRouter();
-  // Retrieve slide definitions from the translation dictionary. Each
-  // slide contains a heading, description and optional labels. We
-  // default to an empty array if nothing is returned.
+  // 슬라이드 데이터는 translations에서 관리합니다.
+  // 슬라이드 내용(heading, description, link 등)을 수정하려면
+  // translations.js의 slides 배열을 편집하세요.
   const slides = t('slides') || [];
   const [current, setCurrent] = useState(0);
 
@@ -30,28 +37,19 @@ export default function Slider() {
             onClick={() => handleSlideClick(slide.link)}
             style={{ cursor: slide.link ? 'pointer' : 'default' }}
           >
-            <div className={styles.panel}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src="/images/hero.png"
-                  alt="Main visual"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  priority={idx === 0}
-                />
+            {PANEL_IMAGES.map((image) => (
+              <div key={image.src} className={styles.panel}>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    priority={idx === 0}
+                  />
+                </div>
               </div>
-            </div>
-            <div className={styles.panel}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src="/images/rose.png"
-                  alt="Rose visual"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  priority={idx === 0}
-                />
-              </div>
-            </div>
+            ))}
             <div className={styles.textOverlay}>
               <h2>{slide.heading}</h2>
               <p>{slide.description}</p>

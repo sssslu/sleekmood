@@ -4,17 +4,18 @@ import Header from '../components/Header';
 import { useLang } from './_app';
 import styles from '../styles/Sleekmood.module.css';
 
+// 아트 이미지 목록. 이미지를 추가하거나 교체하려면 이 배열만 수정하세요.
+const ART_IMAGES = [
+  '/images/arts/art1.png',
+  '/images/arts/art2.png',
+  '/images/arts/art3.png',
+  '/images/arts/art4.png',
+  '/images/arts/art5.png',
+  '/images/arts/art6.png',
+];
+
 export default function SleekmoodPage() {
   const { t } = useLang();
-  
-  const images = [
-    '/images/arts/art1.png',
-    '/images/arts/art2.png',
-    '/images/arts/art3.png',
-    '/images/arts/art4.png',
-    '/images/arts/art5.png',
-    '/images/arts/art6.png',
-  ];
 
   return (
     <>
@@ -36,7 +37,7 @@ export default function SleekmoodPage() {
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.grid}>
-            {images.map((src, idx) => (
+            {ART_IMAGES.map((src, idx) => (
               <div key={idx} className={styles.card}>
                 <div className={styles.imageWrapper}>
                   <Image
